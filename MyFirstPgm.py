@@ -1,10 +1,13 @@
 import time
 
 from selenium import webdriver
-from selenium.webdriver.opera.service import Service
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
 
-s=Service(executable_path="C:\\Users\\91959\\Downloads\\chromedriver_win32 (2)\\operadriver.exe")
-driver=webdriver.Opera(service=s)
+from selenium.webdriver.support.select import Select
+
+s=Service(executable_path="C:\\Users\\91959\\Downloads\\chromedriver_win32 (2)\\chromedriver.exe")
+driver=webdriver.Chrome(service=s)
 driver.get("http://www.fb.com")
 driver.maximize_window()
 driver.implicitly_wait(30)
@@ -22,4 +25,4 @@ time.sleep(3)
 sel.select_by_value("10")
 time.sleep(3)
 sel.select_by_index(1)
-diver.close()
+driver.close()
